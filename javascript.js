@@ -99,15 +99,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showGameFinishedMessage() {
-        const gameFinishedMessage = document.getElementById("gameFinished");
+        const outputDiv = document.getElementById("output");
+        const gameFinishedMessage = document.createElement("p");
+        gameFinishedMessage.id = "gameFinished";
         if (humanScore > botScore) {
-            return gameFinishedMessage.innerText = `game over you won: you ${humanScore} - bot ${botScore}`;
+            gameFinishedMessage.innerText = `game over final score: you ${humanScore} - bot ${botScore}`;
         } else if (humanScore < botScore) {
-            return gameFinishedMessage.innerText = `game over you lost: you ${humanScore} - bot ${botScore}`;
+            gameFinishedMessage.innerText = `game over final score: you ${humanScore} - bot ${botScore}`;
         } else {
-            return gameFinishedMessage.innerText = `game over it was a draw: you ${humanScore} - bot ${botScore}`;
-        }
-        
+            gameFinishedMessage.innerText = `game over final score: you ${humanScore} - bot ${botScore}`;
+        } 
+        outputDiv.appendChild(gameFinishedMessage);
     }
 
     document.getElementById("rockButton").addEventListener("click", function() {
@@ -130,9 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("rounds").innerText = "";
         document.getElementById("score").innerText = "";
         document.getElementById("gameFinished").innerText = "";
-
+    
         const outputDiv = document.getElementById("output");
         const children = outputDiv.children;
+
         for (let i = children.length - 1; i >= 0; i--) {
             const child = children[i];
             if (child.id !== "result" && child.id !== "rounds" && child.id !== "score" && child.id !== "gameFinished") {
@@ -141,6 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         console.clear();
-        console.log("game reset successfully");
+        console.log("Game reset");
     });
 });
