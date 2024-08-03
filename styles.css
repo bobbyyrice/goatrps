@@ -30,7 +30,7 @@ p {
   gap: 35px;
 }
 
-#bigboxfortext {
+.bigboxfortext {
   box-sizing: border-box;
   min-width: 600px;
   max-width: 600px;
@@ -53,7 +53,7 @@ p {
   10px 0 80px #0ff;         
 }
 
-#bigboxfortext::-webkit-scrollbar {
+.bigboxfortext::-webkit-scrollbar {
   display: none;
 }
 
