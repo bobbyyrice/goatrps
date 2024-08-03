@@ -131,7 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("result").innerText = "";
         document.getElementById("rounds").innerText = "";
         document.getElementById("score").innerText = "";
-        document.getElementById("gameFinished").innerText = "";
+        let element = document.getElementById("gameFinished");
+        element.remove()
     
         const outputDiv = document.getElementById("output");
         const children = outputDiv.children;
