@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showGameFinishedMessage() {
         const outputDiv = document.getElementById("output");
-        const gameFinishedMessage = document.createElement("p");
+        const gameFinishedMessage = document.getElementById("gameFinished");
         gameFinishedMessage.id = "gameFinished";
         if (humanScore > botScore) {
             gameFinishedMessage.innerText = `game over you won: you ${humanScore} - bot ${botScore}`;
@@ -131,8 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("result").innerText = "";
         document.getElementById("rounds").innerText = "";
         document.getElementById("score").innerText = "";
-        let element = document.getElementById("gameFinished");
-        element.remove()
+        document.getElementById("gameFinished").innerText = "";
     
         const outputDiv = document.getElementById("output");
         const children = outputDiv.children;
