@@ -103,11 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const gameFinishedMessage = document.createElement("p");
         gameFinishedMessage.id = "gameFinished";
         if (humanScore > botScore) {
-            gameFinishedMessage.innerText = `game over final score: you ${humanScore} - bot ${botScore}`;
+            gameFinishedMessage.innerText = `game over you won: you ${humanScore} - bot ${botScore}`;
         } else if (humanScore < botScore) {
-            gameFinishedMessage.innerText = `game over final score: you ${humanScore} - bot ${botScore}`;
+            gameFinishedMessage.innerText = `game over you lost: you ${humanScore} - bot ${botScore}`;
         } else {
-            gameFinishedMessage.innerText = `game over final score: you ${humanScore} - bot ${botScore}`;
+            gameFinishedMessage.innerText = `game over it was a draw: you ${humanScore} - bot ${botScore}`;
         } 
         outputDiv.appendChild(gameFinishedMessage);
     }
